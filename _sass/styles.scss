@@ -13,7 +13,7 @@ $green : darken(lime, 15%);
 // defaults
 body {
     background: $white;
-    //background: radial-gradient($bg, $black);
+   
     color: $black;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -150,8 +150,10 @@ img {
 .ui-words-wrapper {
     position: relative;
     padding: $spacer * 3 0 $spacer * 6;
+     background: linear-gradient($bg, $white);
     &.pause {
         filter: blur(4px);
+        background: none;
     }
 }
 
