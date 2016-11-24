@@ -143,6 +143,7 @@ var Game = (function ($) {
                         jk.vars.colors.push(this.color);
                     });
                     jk.vars.total = data.length;
+                    jk.vars.colors = jk.services.shuffleArray(jk.vars.colors);
                     jk.services.words();
                 }
             }
@@ -166,8 +167,12 @@ var Game = (function ($) {
                 var _el = $(this);
                     
                 if (jk.services.randomNum(100) < 10) {
+                    var _num = jk.services.randomNum(jk.vars.words.length),
+                        _dummy = jk.vars.words[_num];
                     
-                    _el.find("var").html(jk.vars.words[jk.services.randomNum(jk.vars.words.length)]);
+                    jk.vars.words.splice(_num, 1);
+                    
+                    _el.find("var").html(_dummy);
                     _el.attr({"data-correct" : false});
                 } 
                 
@@ -229,6 +234,19 @@ var Game = (function ($) {
         },
         randomNum : function (max) {
             return Math.floor(Math.random() * max) + 1;
+        },
+        shuffleArray : function (array) {
+            var currentIndex = array.length, temporaryValue, randomIndex;
+            
+            while (0 !== currentIndex) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+
+            return array;
         }
     };
     // ########################################
