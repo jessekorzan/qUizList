@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+// vars
+$spacer : 24px;
+$highlight : aqua;
+
+$black : darken($highlight, 38%);
+$white : #fff;
+$bg : darken(#E0DFE6, 5%);
+$red : crimson;
+$green : darken(lime, 15%);
+
+// defaults
+body {
+    background: $white;
+    //background: radial-gradient($bg, $black);
+    color: $black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1em;   
+}
+h1, h2, h3 {
+    margin-bottom: $spacer * 1.5;
+}
+h2 {
+    font-size: 22px;
+    font-weight: 400;
+}
+p {
+    line-height: 1.625em;
+}
+a {
+    color: darken($highlight, 15%);
+    text-decoration: none;
+}
+
+section {
+    position: relative;
+    > div {
+        width: 100%;
+        
+    }
+}
+var {
+    font-style: normal;
+}
+img {
+    max-width: 100%;
+}
+// classes
+
+.layout-dashboard {
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 66px;
+    background: linear-gradient(rgba($black, 0.4), rgba(darken($black, 8%), 0.8));
+    background: darken($highlight, 45%);
+    color: rgba($white, 0.6);
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: table;
+    box-shadow: 0px -6px 14px 6px rgba(#000, 0.2);
+    > div {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 $spacer;
+        width: 25%;
+        text-align: center;
+        &:last-child {
+            text-align: right;
+        }
+        &:first-child {
+            text-align: left;
+        }
+    }
+    i {
+        margin-left: $spacer;
+    }
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+    span {
+        //font-family: monospace;
+       
+        margin:0 $spacer 0 $spacer/4;
+        color: $highlight;
+    }
+}
+
+.btn {
+    text-transform: uppercase;
+    padding: $spacer;
+    background: $highlight;
+    color: darken($highlight, 40%);
+    font-weight: 700;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.ui-complete {
+    position: relative;
+    padding: $spacer * 2 $spacer $spacer;
+    > div, .btn {
+        max-width: 320px;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.ui-score {
+
+    text-transform: uppercase;
+    div {
+        color: $green;
+        font-size: 48px;
+        font-weight: 700;
+    }
+    P {
+        font-family: monospace;
+        font-size: 22px;
+    }
+}
+
+
+// WORDS
+.ui-words-list {
+    position: relative;
+    z-index: 2;
+    transition: all 180ms linear;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 354px;
+    .word {
+        position: relative;
+        font-size: 22px;
+        line-height: 44px;
+        padding: $spacer 0;
+        text-transform: lowercase;
+        height: 44px;
+    }
+}
+.ui-words-wrapper {
+    position: relative;
+    padding: $spacer * 3 0 $spacer * 6;
+    &.pause {
+        filter: blur(4px);
+    }
+}
+
+// controls WORD UI
+
+.ui-word-controls {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    display: table;
+    > div {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        text-align: right;
+    }
+    .yes, .no {
+        width: 44px;
+        height: 44px;
+        border-radius: 100%;
+        border: 1px dotted lighten($black, 15%);
+        color:  lighten($black, 15%);
+        display: inline-block;
+        font-size: 22px;
+        line-height: 54px;
+        user-select: none;
+        cursor: pointer;
+        text-align: center;
+        transition: all 180ms ease-in-out;
+        &:nth-child(1) {
+           // right: calc(56px + #{$spacer});
+/*
+            border: 2px dotted $red;
+            color: $green;
+*/
+           
+        }
+        span {
+            pointer-events: none;
+        }
+        &:hover {
+/*
+            background: darken($red, 10%);
+            &:nth-child(1) {
+                background: darken($green, 10%);
+            }
+*/
+        }
+    }
+}
+
+// selection states
+.word {
+    transition: all 320ms ease-in-out;
+    &.yes {
+        .ui-word-controls {
+            .yes {
+                border-color: transparent;
+                background: $green;
+                color: $white;
+            }
+        }
+    
+    }
+    &.no {
+        .ui-word-controls {
+            .no {
+                border-color: transparent;
+                background: $red;
+                color: $white;
+            }
+        }
+    }
+    &.wrong {
+        opacity: 0;
+        &:before {
+            content: "clear";
+            font-family: "Material Icons";
+            color: $red;
+        }
+    }
+    &.right {
+        opacity: 0;
+        &:before {
+            content: "check";
+            font-family: "Material Icons";
+            color: $green;
+        }
+    }
+    &.closed {
+        pointer-events: none;
+    }
+}
+
+
+.ui-modal {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(#111, 0.9);
+    display: table;
+    color: $white;
+    transition: all 320ms ease-in-out;
+    > div {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        .btn {
+            width: 200px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-size: 48px;
+            font-weight: 400;
+        }
+        h1, p {
+            opacity: 0.3;
+        }
+        p {
+            line-height: 0;
+            margin: -12px 0 44px 0;
+            span {
+                border: 2px solid $white;
+                width: 33px;
+                height: 33px;
+                border-radius: 100%;
+                display: inline-block;
+                margin-right: 12px;
+                
+                i {
+                    line-height: 33px;
+                   
+                }
+                &:nth-of-type(2) {
+                    margin: 0 0 0 12px;
+                }
+            }
+        }
+    }
+    &.off {
+        opacity: 0;
+        transform: scale(4);
+    }
+}
+
