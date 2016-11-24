@@ -2,22 +2,36 @@
 
 // vars
 $spacer : 24px;
-$highlight : aqua;
 
-$black : darken($highlight, 38%);
-$white : #fff;
+
 $bg : darken(#E0DFE6, 5%);
-$red : crimson;
-$green : darken(lime, 15%);
+
+$white : #FFFFFF;
+$black : #4B5C64; //#595D5F;
+$black-light : #95989A;
+$black-lighter : lighten($black-light, 20%);
+$blue :  #15b9d2; //#3FB8AF;
+$blue-light: #C6D9DD;
+$yellow : #f8f19b;
+$orange : #F35935;
+$green : #10b304;
+$green-light: #97F2C1;
+$lime : #CBE62B;
+$red: #E02706;
+$red-light: #F2A597;
+
+$highlight : $blue;
 
 // defaults
 body {
     background: $white;
-   
+    background-repeat: no-repeat;
+    background: linear-gradient($blue-light, $white);
     color: $black;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 1em;   
+    min-height: 100vh;
 }
 h1, h2, h3 {
     margin-bottom: $spacer * 1.5;
@@ -97,8 +111,7 @@ img {
     text-transform: uppercase;
     padding: $spacer;
     background: $highlight;
-    color: darken($highlight, 40%);
-    font-weight: 700;
+    color: $white;
     font-size: 14px;
     display: block;
     text-align: center;
@@ -150,11 +163,45 @@ img {
 .ui-words-wrapper {
     position: relative;
     padding: $spacer * 3 0 $spacer * 6;
-     background: linear-gradient($bg, $white);
     &.pause {
         filter: blur(4px);
         background: none;
     }
+}
+
+.layout-columns {
+    .ui-words-wrapper {
+        
+    }
+    .ui-words-list {
+        max-width: 100%;    
+        display: flex;
+        flex-wrap: wrap;
+        //align-content: space-around;
+        justify-content: center;
+        .word {
+            
+            padding-left: $spacer;
+            padding-right: $spacer;
+            background: rgba($black, 0.15);
+            margin-bottom: 1px;
+            
+            flex: 0 0 50%;
+            
+            @media screen and (min-width: 900px) {
+			    flex: 0 0 28%;
+			    margin: 0 $spacer/2 0 $spacer/2;
+		    }
+		    @media screen and (min-width: 1680px) {
+			    flex: 0 0 15%;
+			    margin: 0 $spacer 0 $spacer;
+		    }
+        }
+    }
+    .ui-word-controls {
+        right: $spacer;
+    }
+    
 }
 
 // controls WORD UI
@@ -178,7 +225,7 @@ img {
         width: 44px;
         height: 44px;
         border-radius: 100%;
-        border: 1px dotted lighten($black, 15%);
+        border: 1px dashed lighten($black, 15%);
         color:  lighten($black, 15%);
         display: inline-block;
         font-size: 22px;

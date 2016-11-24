@@ -11,7 +11,7 @@ var Game = (function ($) {
 	jk.vars = {
     	game : {
         	id : 01,
-        	name : "Variant A"
+        	name : VARIANT_NAME
     	},
     	colors : [],
     	words : [],
