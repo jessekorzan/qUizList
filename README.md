@@ -1,6 +1,8 @@
 # qUizList
 ## UI Prototype &mdash; simple yes or no question/answer format for quizzes or tests.
 
+The highlight here is probably showing how to use Google Sheets/Forms for a DB for an application. Dead easy to understand. Reading not included.
+
 DEMO: https://jessekorzan.github.io/qUizList/
 
 ---
