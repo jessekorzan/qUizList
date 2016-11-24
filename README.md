@@ -3,7 +3,9 @@
 
 The real highlight (regardless of what you read below) is using Google Sheets & Forms for an application DB. Should be easy to understand the javascript. Useful for prototyping. Submit an issue if you have q's.
 
-DEMO: https://jessekorzan.github.io/qUizList/
+### DEMO: https://jessekorzan.github.io/qUizList/ 
+
+---
 
 SINGLE-COLUMN: https://jessekorzan.github.io/qUizList/index.html
 
