@@ -313,9 +313,10 @@ var Game = (function ($) {
                         break;
                     case "start":
                         $(".ui-modal").addClass("off");
+                        $(".pause").removeClass("pause");
                         setInterval(function(){
                             jk.views.timer();
-                            $(".pause").removeClass("pause");
+                            
                             $(".ui-modal").remove();
                         }, 400);
                         
