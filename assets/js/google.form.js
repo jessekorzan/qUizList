@@ -19,7 +19,8 @@ var Google = (function ($) {
 	        "entry.974744299", //score
             "entry.408793700", //total,
             "entry.76165195", //percent,
-            "entry.432523256" //time
+            "entry.432523256", //time
+            "entry.1637332259" //wrongs
             ]
     	
     	

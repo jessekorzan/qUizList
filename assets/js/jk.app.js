@@ -17,6 +17,7 @@ var Game = (function ($) {
     	words : [],
     	score : 0,
     	total : 50,
+    	wrongs : [],
     	obj : {
         	wordlist : ".ui-words-list",
         	word : ".word"
@@ -162,11 +163,13 @@ var Game = (function ($) {
         },
         test : function () {
             $.each($(jk.vars.obj.word), function(){
+                var _el = $(this);
+                    
                 if (jk.services.randomNum(100) < 10) {
-                    var _el = $(this);
+                    
                     _el.find("var").html(jk.vars.words[jk.services.randomNum(jk.vars.words.length)]);
                     _el.attr({"data-correct" : false});
-                }
+                } 
                 
                 if (jk.services.randomNum(100) < 8) {
                     jk.views.ui.word($(this), "no");
@@ -187,6 +190,10 @@ var Game = (function ($) {
                         jk.vars.score++;
                     } else {
                         _ans = "wrong";
+                        // record wrong word
+                        
+                        jk.vars.wrongs.push(_word.find("var").html());
+                        
                     }
                     jk.views.scoreboard();
                     _word.addClass(_ans);
@@ -199,9 +206,9 @@ var Game = (function ($) {
                             jk.services.saveScore();
                             
                         }
-                    }, 10);
+                    }, 15);
                     
-                }, 10 * i); 
+                }, 30 * i); 
                 
             });
         },
@@ -213,7 +220,8 @@ var Game = (function ($) {
                 jk.vars.score, // score
                 jk.vars.total, // total questions
                 Math.floor((jk.vars.score / jk.vars.total) * 100), // percentage
-                jk.vars.timer.time // time
+                jk.vars.timer.time, // time
+                jk.vars.wrongs.toString() // wrong list
                 ];
             
             Google.form.save(_arr);
