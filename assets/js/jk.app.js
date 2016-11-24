@@ -32,7 +32,6 @@ var Game = (function ($) {
             }
         });
         
-        
         jk.controller.ui();
         jk.services.colors();
         
@@ -151,7 +150,7 @@ var Game = (function ($) {
                     _el.attr({"data-correct" : false});
                 }
                 
-                if (jk.services.randomNum(100) < 5) {
+                if (jk.services.randomNum(100) < 8) {
                     jk.views.ui.word($(this), "no");
                 }
                 
@@ -175,11 +174,30 @@ var Game = (function ($) {
                     _word.addClass(_ans);
                     setTimeout(function(){
                         _word.remove();
+                        if (i == jk.vars.total-1) {
+                            // fire the end game stuff
+                            // i.e. send score to google form
+                            jk.services.saveScore();
+                            
+                        }
                     }, 320);
                     
                 }, 320 * i); 
                 
             });
+        },
+        saveScore : function () {
+            var _arr = [];
+            
+            _arr = [
+                jk.vars.score, 
+                jk.vars.total, 
+                Math.floor((jk.vars.score / jk.vars.total) * 100), 
+                jk.vars.timer.time
+                ];
+            
+            Google.form.save(_arr);
+            
         },
         randomNum : function (max) {
             return Math.floor(Math.random() * max) + 1;
