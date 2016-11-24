@@ -275,13 +275,16 @@ img {
         h2 {
             font-size: 48px;
             font-weight: 400;
+            margin: $spacer/2 0 $spacer*2;
         }
         h1, p {
             opacity: 0.3;
+            margin: 0;
+            
         }
         p {
             line-height: 0;
-            margin: -12px 0 44px 0;
+            margin: 2px 0 44px 0;
             span {
                 border: 2px solid $white;
                 width: 33px;
