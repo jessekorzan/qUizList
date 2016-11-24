@@ -182,7 +182,7 @@ img {
 
 .layout-columns {
     .ui-words-wrapper {
-        
+        padding: $spacer * 2 0 $spacer * 4;
     }
     .ui-words-list {
         max-width: 100%;    
@@ -192,25 +192,33 @@ img {
         justify-content: center;
         .word {
             
-            padding-left: $spacer;
-            padding-right: $spacer;
+            display: block;
+            padding-left: $spacer/2;
+            padding-right: $spacer/2;
             background: rgba($black, 0.15);
-            margin-bottom: 1px;
+            margin-bottom: 1px !important;
             
             flex: 0 0 50%;
             
             @media screen and (min-width: 900px) {
 			    flex: 0 0 28%;
+			    margin: 0 4px 0 4px;
+			    font-size: 18px;
+		    }
+		     @media screen and (min-width: 1400px) {
+			    flex: 0 0 15%;
 			    margin: 0 $spacer/2 0 $spacer/2;
 		    }
 		    @media screen and (min-width: 1680px) {
 			    flex: 0 0 15%;
-			    margin: 0 $spacer 0 $spacer;
+			   // margin: 0 $spacer 0 $spacer;
+			    font-size: 22px;
 		    }
         }
     }
     .ui-word-controls {
         right: $spacer;
+        left: auto;
     }
     
 }

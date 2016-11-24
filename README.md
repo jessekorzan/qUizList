@@ -5,6 +5,8 @@ The real highlight (regardless of what you read below) is using Google Sheets & 
 
 DEMO: https://jessekorzan.github.io/qUizList/
 
+MULTI-COLUMN: https://jessekorzan.github.io/qUizList/columns.html
+
 jQuery is a dependency.
 
 ---
@@ -16,4 +18,5 @@ Highlights:
 - watch Oprah add up the final score
 - has a timer!
 - saves results to google form
+- two layouts
 
