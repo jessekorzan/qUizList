@@ -11,7 +11,7 @@ var Game = (function ($) {
 	jk.vars = {
     	game : {
         	id : 01,
-        	name : "Variant A"
+        	name : VARIANT_NAME
     	},
     	colors : [],
     	words : [],
@@ -194,6 +194,7 @@ var Game = (function ($) {
                         if (i == jk.vars.total-1) {
                             // fire the end game stuff
                             // i.e. send score to google form
+                            $(".ui-score").addClass("done");
                             jk.services.saveScore();
                             
                         }
