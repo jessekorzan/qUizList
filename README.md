@@ -6,6 +6,7 @@ The real highlight (regardless of what you read below) is using Google Sheets & 
 DEMO: https://jessekorzan.github.io/qUizList/
 
 SINGLE-COLUMN: https://jessekorzan.github.io/qUizList/index.html
+
 MULTI-COLUMN: https://jessekorzan.github.io/qUizList/columns.html
 
 jQuery is a dependency.
