@@ -9,7 +9,7 @@ Review simple demo; list of "colours" to verify are correct, code randomly throw
 
 Highlights:
 - customize the JSON for different test/quizes (easy to see how to change in code)
-- watch Oprah addd up the final score
+- watch Oprah add up the final score
 - has a timer!
 - saves results to google form
 
