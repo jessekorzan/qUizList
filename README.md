@@ -5,7 +5,7 @@ DEMO: https://jessekorzan.github.io/qUizList/
 
 ---
 
-Run the simple demo (list of "colours" to verify are correct, code randomly throws in false answers).
+Review simple demo; list of "colours" to verify are correct, code randomly throws in false answers.
 
 Highlights:
 - customize the JSON for different test/quizes (easy to see how to change in code)
