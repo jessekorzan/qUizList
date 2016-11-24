@@ -1,14 +1,22 @@
 var Game = (function ($) {
     // 2016
     // @jessekorzan
-    //
+    // emptycan.com
+    
+    // if you're looking for the Google Sheets sh*t,
+    // try the service that saves the score
+    
 	var jk = {};
 	jk.config = {};
 	jk.vars = {
+    	game : {
+        	id : 01,
+        	name : "Variant A"
+    	},
     	colors : [],
     	words : [],
     	score : 0,
-    	total : 50,
+    	total : 5,
     	obj : {
         	wordlist : ".ui-words-list",
         	word : ".word"
@@ -35,6 +43,8 @@ var Game = (function ($) {
         jk.controller.ui();
         jk.services.colors();
         
+        // show highscores?
+        //Google.form.get();
     };
 /* --------------------------------------------------	
 -------------------------------------------------- */
@@ -190,10 +200,11 @@ var Game = (function ($) {
             var _arr = [];
             
             _arr = [
-                jk.vars.score, 
-                jk.vars.total, 
-                Math.floor((jk.vars.score / jk.vars.total) * 100), 
-                jk.vars.timer.time
+                jk.vars.game.name, // variant/name of quiz
+                jk.vars.score, // score
+                jk.vars.total, // total questions
+                Math.floor((jk.vars.score / jk.vars.total) * 100), // percentage
+                jk.vars.timer.time // time
                 ];
             
             Google.form.save(_arr);
