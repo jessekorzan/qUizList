@@ -5,7 +5,7 @@ The real highlight (regardless of what you read below) is using Google Sheets & 
 
 DEMO: https://jessekorzan.github.io/qUizList/
 
-jQuery is a dependency. sUck it.
+jQuery is a dependency.
 
 ---
 
