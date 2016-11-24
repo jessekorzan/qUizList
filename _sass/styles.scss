@@ -140,6 +140,17 @@ img {
         font-family: monospace;
         font-size: 22px;
     }
+    .end {
+        display: none;
+    }
+    &.done {
+        .end {
+            display: block;
+        }
+        .start {
+            display: none;
+        }
+    }
 }
 
 
@@ -258,7 +269,7 @@ img {
 
 // selection states
 .word {
-    transition: all 320ms ease-in-out;
+    transition: all 320ms linear;
     &.yes {
         .ui-word-controls {
             .yes {
@@ -279,7 +290,7 @@ img {
         }
     }
     &.wrong {
-        opacity: 0;
+        opacity: 0.5;
         &:before {
             content: "clear";
             font-family: "Material Icons";
@@ -287,7 +298,7 @@ img {
         }
     }
     &.right {
-        opacity: 0;
+        opacity: 0.5;
         &:before {
             content: "check";
             font-family: "Material Icons";

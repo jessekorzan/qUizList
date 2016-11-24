@@ -51,9 +51,10 @@
 <script id="score" type="text/template">
     <div class="ui-score">
         <div>{{ score }} / {{ total }}</div>
-        <p>{{ perc }}% in {{ time }} seconds</p>
-        <img src="assets/img/giphy.gif"/>
-        <a href="" class="btn">Play Again</a>
+        <p class="start">Tabulating score...</p>
+        <p class="end">{{ perc }}% in {{ time }} seconds!</p>
+        <img class="start" src="assets/img/giphy.gif"/>
+        <div class="end"><a href="" class="btn">Play Again</a></div>
     </div>
 </script>
 <script id="start" type="text/template">
