@@ -16,7 +16,7 @@ var Game = (function ($) {
     	colors : [],
     	words : [],
     	score : 0,
-    	total : 5,
+    	total : 50,
     	obj : {
         	wordlist : ".ui-words-list",
         	word : ".word"
