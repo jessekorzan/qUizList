@@ -193,12 +193,11 @@ img {
         .word {
             
             display: block;
-            padding-left: $spacer/2;
-            padding-right: $spacer/2;
+            padding: $spacer/2;
             background: rgba($black, 0.15);
             margin-bottom: 1px !important;
-            
-            flex: 0 0 50%;
+            margin: 0 12px;
+            flex: 1 0 50%;
             
             @media screen and (min-width: 900px) {
 			    flex: 0 0 28%;
@@ -206,19 +205,23 @@ img {
 			    font-size: 18px;
 		    }
 		     @media screen and (min-width: 1400px) {
-			    flex: 0 0 15%;
-			    margin: 0 $spacer/2 0 $spacer/2;
+			    flex: 0 0 16%;
+			    margin: 0 $spacer/4 0 $spacer/4;
 		    }
 		    @media screen and (min-width: 1680px) {
 			    flex: 0 0 15%;
-			   // margin: 0 $spacer 0 $spacer;
+                margin: 0 $spacer/2 0 $spacer/2;
 			    font-size: 22px;
+			    padding: $spacer $spacer/2;
 		    }
         }
     }
     .ui-word-controls {
-        right: $spacer;
+        right: $spacer/2;
         left: auto;
+        @media screen and (min-width: 1680px) {
+            right: $spacer;
+        }
     }
     
 }

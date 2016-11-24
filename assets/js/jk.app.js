@@ -141,6 +141,7 @@ var Game = (function ($) {
                     $.each(data, function(){
                         jk.vars.colors.push(this.color);
                     });
+                    jk.vars.total = data.length;
                     jk.services.words();
                 }
             }
@@ -198,9 +199,9 @@ var Game = (function ($) {
                             jk.services.saveScore();
                             
                         }
-                    }, 320);
+                    }, 10);
                     
-                }, 320 * i); 
+                }, 10 * i); 
                 
             });
         },
