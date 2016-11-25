@@ -196,9 +196,7 @@ var Game = (function ($) {
                     } else {
                         _ans = "wrong";
                         // record wrong word
-                        
                         jk.vars.wrongs.push(_word.find("var").html());
-                        
                     }
                     jk.views.scoreboard();
                     _word.addClass(_ans);
@@ -209,6 +207,9 @@ var Game = (function ($) {
                             // i.e. send score to google form
                             $(".ui-score").addClass("done");
                             jk.services.saveScore();
+                            if (jk.vars.timer.time > 12) {
+                                // restrict low times? not save, etc
+                            }
                             
                         }
                     }, 15);
