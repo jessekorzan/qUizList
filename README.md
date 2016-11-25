@@ -1,5 +1,5 @@
-# qUizList
-## UI Prototype &mdash; simple yes or no question/answer format for quizzes or tests.
+# Starter Set
+## Questionnaire Prototype &mdash; simple yes or no question/answer format for quizzes or tests.
 ## A/B Test Prototype &mdash; compare the performance of two layouts.
 
 For my own reference: Uses Google Sheets & Forms for an application DB. Google Analytics Experiement to facilitate A/B test. POC for scoreboard components (leaderboard, weighted scoring, scatter chart).
