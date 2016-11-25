@@ -30,4 +30,6 @@ Highlights:
 
 ---
 ![alt text](https://d13yacurqjgara.cloudfront.net/users/33136/screenshots/3118093/a-b-test.png  "screenshot")
+![alt text](https://jessekorzan.github.io/qUizList/assets/img/single.01.png  "screenshot")
+![alt text](https://jessekorzan.github.io/qUizList/assets/img/multi.01.png  "screenshot")
 
