@@ -11,6 +11,10 @@ SINGLE-COLUMN: https://jessekorzan.github.io/qUizList/index.html
 
 MULTI-COLUMN: https://jessekorzan.github.io/qUizList/columns.html
 
+SCOREBOARD: https://jessekorzan.github.io/qUizList/scoreboard/
+
+[scatter chart]: https://d13yacurqjgara.cloudfront.net/users/33136/screenshots/3118093/a-b-test.png
+
 jQuery is a dependency.
 
 ---
