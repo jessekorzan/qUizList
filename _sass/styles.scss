@@ -450,15 +450,28 @@ hr {
         justify-content: center;
         align-items: center;
         text-align: center;
-    img {
+    a {
         flex: 1 0 auto;
         max-width: calc(49% - 16px);
-        margin: 0 1% 0 0;
+        margin: 0 1% $spacer 0;
         //height: auto !important;
         //max-width: auto;
-        border: 8px solid rgba($black, 0.25);
+        &:after {
+            content: "Try It!";
+            text-transform: uppercase;
+            font-size: 12px;
+            color: $blue;
+            text-decoration: underline;
+        }
+        img {
+            border: 8px solid rgba($black, 0.25);
+            max-width: calc(100% - 16px); 
+            
+        }
         &:first-child {
-            border-color: rgba($orange, 0.5);
+            img {            
+                border-color: rgba($orange, 0.5);
+            }
         }
     }
 }
