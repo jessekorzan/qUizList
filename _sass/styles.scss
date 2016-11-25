@@ -85,7 +85,7 @@ section {
 }
 .layout-scoreboard {
     section {
-        padding: $spacer 8%;
+        padding: $spacer 12% $spacer * 3;
         > div {
             width: 100%;
         
@@ -427,7 +427,7 @@ hr {
     height: 80vh;
     border-left: 3px solid rgba($black, 0.5);
     border-bottom: 3px solid rgba($black, 0.5);
-    margin-bottom: $spacer * 1.5;
+    margin: $spacer * 3 0 $spacer;
     .pt {
         position: absolute;
         transform: translateX(-7px) translateY(-7px);
