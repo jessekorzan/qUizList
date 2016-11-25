@@ -21,8 +21,11 @@
 <section>
     <div>
         <h1>A/B Test &mdash; <span class="ui-stat-total">???</span> Results</h1>
-        <h2>Layout: Multi-Column vs. Single-Column</h2>
-        
+        <h2>Layout: Single-Column vs. Multi-Column</h2>
+        <div class="layout-media">
+            <img src="../assets/img/single.01.png"/>
+            <img src="../assets/img/multi.01.png"/>
+        </div>
         <div class="ui-two-x-two">
             <span></span>
             <span></span>
@@ -34,6 +37,12 @@
             <span></span>
             <span></span>
             <span></span>
+            <div class="pt" style="top: 30px; left: 30px;">Single-Column</div>
+            <div class="pt Multi" style="top: 60px; left: 30px;">Multi-Column</div>
+        </div>
+        <h2>Common Misses</h2>
+        <div class="ui-word-cnt">
+            
         </div>
         
         <table class="layout-table">
@@ -64,7 +73,11 @@
         <td> {{ variant }} </td>
     </tr>
 </script>
-
+<script id="word" type="text/template">
+    {{#.}}
+        <div class="word-cnt score-{{ score }}" style="font-size: {{ score }}em">{{ word }}</div>
+    {{/.}}
+</script>
 <!-- javascript -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>

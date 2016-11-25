@@ -9,8 +9,11 @@ var Scoreboard = (function ($) {
 	var jk = {};
 	jk.config = {};
 	jk.vars = {
-    	data : {}
+    	data : {
+        	wrongs : ""
+    	}
 	};
+
 /* --------------------------------------------------	
 -------------------------------------------------- */
     // INIT this f**ker
@@ -95,7 +98,7 @@ var Scoreboard = (function ($) {
                 var _row = this.values,
                     _col = {};
                     
-                if (_row[4].formattedValue > 12) {
+                if (_row[4].formattedValue > 12 && _row[4].formattedValue > 12) {
                     _col = {
                         "time" : _row[0].formattedValue,
                         "score" : _row[1].formattedValue,
@@ -107,6 +110,12 @@ var Scoreboard = (function ($) {
                         "wrongs" : (_row[6] === undefined) ? null : _row[6].formattedValue.split(",").join(", ")
                     };
                     _arr.push(_col);
+                    
+                    // add to the wrong word string
+                    if (_col.wrongs != null) {
+                        var _str = _col.wrongs.split(", ");
+                        jk.vars.data.wrongs += _str;
+                    }
                 }
             
             });
@@ -141,6 +150,40 @@ var Scoreboard = (function ($) {
                 });
                 _target.append(_pt);
             });
+            
+            jk.views.stats();
+        },
+        stats : function (_arr) {
+            var _rtnArr = [];
+            
+            _arr.sort();
+
+            var _current = null,
+                _cnt = 0;
+            
+            for (var i = 0; i < _arr.length; i++) {
+                if (_arr[i] != _current) {
+                    if (_cnt > 0) {
+                        _rtnArr.push({
+                            "word" : _current, 
+                            "score" : _cnt
+                        });
+                    }
+                    _current = _arr[i];
+                    _cnt = 1;
+                } else {
+                    _cnt++;
+                }
+            }
+            if (_cnt > 0) {
+                _rtnArr.push({
+                    "word" : _current, 
+                    "score" : _cnt
+                });
+            }
+            
+            return _rtnArr;
+
         }
     };
     // ########################################
@@ -149,6 +192,21 @@ var Scoreboard = (function ($) {
     //
     // ########################################
     jk.views = {
+        stats : function () {
+            var _wordCnt = {};
+            
+            // count words from the wrong words string
+            _wordCnt = jk.services.stats(jk.vars.data.wrongs.split(","));
+            
+            jk.services.sortByCol(_wordCnt, "score");
+            
+            jk.mustache.output({
+                container : $(".ui-word-cnt"),
+                template : "#word",
+                replace : false,
+                data : _wordCnt
+            });
+        },
         ui : {
             word : function (_word, _state) {
                 _word.attr({"class" : "word"});
