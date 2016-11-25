@@ -456,9 +456,14 @@ hr {
         margin: 0 1% 0 0;
         //height: auto !important;
         //max-width: auto;
-        border: 8px solid rgba($black, 0.25);
+        img {
+            border: 8px solid rgba($black, 0.25);
+            max-width: calc(100% - 16px); 
+        }
         &:first-child {
-            border-color: rgba($orange, 0.5);
+            img {            
+                border-color: rgba($orange, 0.5);
+            }
         }
     }
 }
