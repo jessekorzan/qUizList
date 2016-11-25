@@ -67,7 +67,7 @@ var Google = (function ($) {
 				statusCode: {}
         	});
 		},
-		get : function () {
+		get : function (callBack) {
             $.ajaxSetup({ async: true, cache: false });
             $.ajax ({
                 //dataType : "json",
@@ -79,7 +79,7 @@ var Google = (function ($) {
                     includeGridData : true // include data
                 },  
                 success: function (data) { 
-            		console.log(data.sheets[0].data[0].rowData);
+            		callBack(data.sheets[0].data[0].rowData);
             	},
                 error: function(e) {
             	    console.error(e);
